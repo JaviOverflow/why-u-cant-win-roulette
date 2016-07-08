@@ -14,14 +14,14 @@ def v1():  # Check total amount of reds and blacks
     blacks = 0
     money = 0
     for _ in range(100000):
-        choice = RED if reds > blacks else BLACK
+        choice = RED if reds < blacks else BLACK
         randomColor = randomColorGenerator.randint(0, 1)
         if randomColor == RED:
             reds += 1
         else:
             blacks += 1
-
         money += 1 if randomColor == choice else -1
+
     print("Total money: {0}".format(money))
 
 
